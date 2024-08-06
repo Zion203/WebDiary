@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EntryCard from "../components/Card.astro";
+
+// Sample diary entries
+const entries = [
+  { title: "Day 1", date: "2024-08-01", content: "Today was a great day!" },
+  { title: "Day 2", date: "2024-08-02", content: "Learned Astro and Tailwind CSS!" },
+];
+---
+
+<Layout title="Home">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6">My Diary</h1>
+    <div>
+      {entries.map(entry => (
+        <EntryCard {...entry} />
+      ))}
+    </div>
+  </div>
+</Layout>
